@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer components {
+  .navitem {
+    @apply text-slate-950 font-navitem font-semibold transition-colors duration-300;
+  }
+  .navitem:hover {
+    @apply text-[#94DEF5];
+  }
+
+  .handles-container {
+    @apply fixed top-[9vh] right-0 w-[5vw] h-[18vh] flex flex-col justify-around items-center;
+  }
+  .handle {
+    @apply cursor-pointer;
+  }
+
+  .intro {
+    @apply w-[85vw] h-[70vh] mx-auto mt-12 flex justify-around items-center;
+  }
+  .btn-container {
+    @apply w-[80%] mx-auto flex justify-around items-center self-end;
+  }
+  .btn {
+    @apply rounded-2xl text-base w-[7em] h-[3em] font-semibold;
+  }
+}
