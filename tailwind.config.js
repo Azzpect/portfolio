@@ -7,6 +7,7 @@ module.exports = {
       navitem: ["Julius Sans One"],
       heading: ["Vollkorn SC"],
       sig: ["Lavishly Yours"],
+      para: ["Kanit"],
     },
   },
   plugins: [],
