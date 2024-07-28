@@ -562,7 +562,70 @@ video {
   --tw-contain-style:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/*universal styles*/
+
+.heading{
+  font-family: Vollkorn SC;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.para{
+  font-family: Kanit;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .navitem{
+  cursor: pointer;
   font-family: Julius Sans One;
   font-weight: 600;
   --tw-text-opacity: 1;
@@ -632,7 +695,6 @@ video {
   width: 85vw;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
 }
 
 .work{
@@ -738,6 +800,10 @@ video {
   display: none;
 }
 
+.aspect-square{
+  aspect-ratio: 1 / 1;
+}
+
 .h-\[18vh\]{
   height: 18vh;
 }
@@ -774,8 +840,20 @@ video {
   min-height: 40%;
 }
 
+.min-h-\[40vh\]{
+  min-height: 40vh;
+}
+
 .w-\[10\%\]{
   width: 10%;
+}
+
+.w-\[20\%\]{
+  width: 20%;
+}
+
+.w-\[30\%\]{
+  width: 30%;
 }
 
 .w-\[40\%\]{
@@ -816,6 +894,10 @@ video {
 
 .resize{
   resize: both;
+}
+
+.flex-row{
+  flex-direction: row;
 }
 
 .flex-col{
@@ -893,6 +975,10 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.p-2{
+  padding: 0.5rem;
 }
 
 .p-3{
@@ -1022,4 +1108,8 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.duration-300{
+  transition-duration: 300ms;
 }

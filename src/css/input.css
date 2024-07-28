@@ -10,8 +10,23 @@
 
 
 @layer components {
+  html {
+    @apply scroll-smooth;
+  }
+
+/*universal styles*/
+  .heading {
+    @apply font-heading text-4xl font-bold;
+  }
+  .para {
+    @apply font-para text-xs;
+  }
+  .container {
+    @apply flex flex-row justify-around items-center mx-auto;
+  }
+
   .navitem {
-    @apply text-slate-950 font-navitem font-semibold transition-colors duration-300;
+    @apply text-slate-950 font-navitem font-semibold transition-colors duration-300 cursor-pointer;
   }
   .navitem:hover {
     @apply text-[#94DEF5];
@@ -35,8 +50,9 @@
   }
 
   .projects {
-    @apply flex flex-col w-[85vw] justify-around items-center mx-auto h-[60vh];
+    @apply flex flex-col w-[85vw] items-center mx-auto h-[60vh];
   }
+  
   .work {
     @apply flex items-center justify-around w-[40%] min-h-[40%] rounded-3xl bg-[#94DEF5] p-3 cursor-pointer;
   }
