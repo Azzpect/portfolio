@@ -7,7 +7,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root {
+  --primary-color: #94DEF5;
+}
 
 @layer components {
   html {
@@ -29,7 +31,7 @@
     @apply text-slate-950 font-navitem font-semibold transition-colors duration-300 cursor-pointer;
   }
   .navitem:hover {
-    @apply text-[#94DEF5];
+    @apply text-primary-color;
   }
 
   .handles-container {
@@ -54,6 +56,30 @@
   }
   
   .work {
-    @apply flex items-center justify-around w-[40%] min-h-[40%] rounded-3xl bg-[#94DEF5] p-3 cursor-pointer;
+    @apply flex items-center justify-around w-[40%] min-h-[40%] rounded-3xl bg-primary-color p-3 cursor-pointer;
+  }
+  .contact-container {
+    @apply w-[85vw] mx-auto my-[15vh] flex flex-col items-center;
+  }
+  .contact {
+    @apply w-[100%] grid grid-cols-7 grid-rows-[6vh_6vh_6vh_6vh_8vh] gap-y-10;
+  }
+  .contact>input,.contact>textarea {
+    @apply border-primary-color border-solid border-2 focus:outline-none rounded-xl px-2 font-para;
+  }
+  .contact>input:nth-child(1) {
+    @apply col-start-1 col-end-4;
+  }
+  .contact>input:nth-child(2) {
+    @apply col-start-5 col-end-8;
+  }
+  .contact>input:nth-child(3) {
+    @apply col-start-1 col-end-6;
+  }
+  .contact>textarea {
+    @apply row-start-3 row-end-5 col-span-full resize-none pt-1;
+  }
+  .contact>button {
+    @apply col-start-4 col-end-5 bg-primary-color rounded-2xl font-heading;
   }
 }

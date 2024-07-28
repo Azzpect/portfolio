@@ -636,8 +636,7 @@ html{
 }
 
 .navitem:hover{
-  --tw-text-opacity: 1;
-  color: rgb(148 222 245 / var(--tw-text-opacity));
+  color: var(--primary-color);
 }
 
 .handles-container{
@@ -705,9 +704,73 @@ html{
   align-items: center;
   justify-content: space-around;
   border-radius: 1.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 222 245 / var(--tw-bg-opacity));
+  background-color: var(--primary-color);
   padding: 0.75rem;
+}
+
+.contact-container{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  display: flex;
+  width: 85vw;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact{
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-rows: 6vh 6vh 6vh 6vh 8vh;
+  row-gap: 2.5rem;
+}
+
+.contact>input,.contact>textarea{
+  border-radius: 0.75rem;
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--primary-color);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-family: Kanit;
+}
+
+.contact>input:focus,.contact>textarea:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.contact>input:nth-child(1){
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.contact>input:nth-child(2){
+  grid-column-start: 5;
+  grid-column-end: 8;
+}
+
+.contact>input:nth-child(3){
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+
+.contact>textarea{
+  grid-column: 1 / -1;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  resize: none;
+  padding-top: 0.25rem;
+}
+
+.contact>button{
+  grid-column-start: 4;
+  grid-column-end: 5;
+  border-radius: 1rem;
+  background-color: var(--primary-color);
+  font-family: Vollkorn SC;
 }
 
 .visible{
@@ -762,6 +825,42 @@ html{
   z-index: 10;
 }
 
+.col-span-full{
+  grid-column: 1 / -1;
+}
+
+.col-start-1{
+  grid-column-start: 1;
+}
+
+.col-start-4{
+  grid-column-start: 4;
+}
+
+.col-start-5{
+  grid-column-start: 5;
+}
+
+.col-end-5{
+  grid-column-end: 5;
+}
+
+.row-start-3{
+  grid-row-start: 3;
+}
+
+.row-start-4{
+  grid-row-start: 4;
+}
+
+.row-end-4{
+  grid-row-end: 4;
+}
+
+.row-end-5{
+  grid-row-end: 5;
+}
+
 .mx-auto{
   margin-left: auto;
   margin-right: auto;
@@ -770,6 +869,14 @@ html{
 .my-\[15vh\]{
   margin-top: 15vh;
   margin-bottom: 15vh;
+}
+
+.mb-10{
+  margin-bottom: 2.5rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
 }
 
 .mr-\[15\%\]{
@@ -790,6 +897,10 @@ html{
 
 .table{
   display: table;
+}
+
+.grid{
+  display: grid;
 }
 
 .contents{
@@ -848,6 +959,10 @@ html{
   width: 10%;
 }
 
+.w-\[100\%\]{
+  width: 100%;
+}
+
 .w-\[20\%\]{
   width: 20%;
 }
@@ -892,8 +1007,36 @@ html{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.resize-none{
+  resize: none;
+}
+
 .resize{
   resize: both;
+}
+
+.grid-cols-5{
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-6{
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-7{
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-rows-4{
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-5{
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.grid-rows-\[6vh_6vh_6vh_6vh_8vh\]{
+  grid-template-rows: 6vh 6vh 6vh 6vh 8vh;
 }
 
 .flex-row{
@@ -957,14 +1100,17 @@ html{
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
-.bg-\[\#94DEF5\]{
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 222 245 / var(--tw-bg-opacity));
+.border-primary-color{
+  border-color: var(--primary-color);
 }
 
 .bg-\[\#D9D9D9\]{
   --tw-bg-opacity: 1;
   background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+
+.bg-primary-color{
+  background-color: var(--primary-color);
 }
 
 .bg-red-700{
@@ -983,6 +1129,11 @@ html{
 
 .p-3{
   padding: 0.75rem;
+}
+
+.px-2{
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .font-heading{
@@ -1086,11 +1237,6 @@ html{
   line-height: 5rem;
 }
 
-.text-\[\#94DEF5\]{
-  --tw-text-opacity: 1;
-  color: rgb(148 222 245 / var(--tw-text-opacity));
-}
-
 .text-slate-950{
   --tw-text-opacity: 1;
   color: rgb(2 6 23 / var(--tw-text-opacity));
@@ -1112,4 +1258,13 @@ html{
 
 .duration-300{
   transition-duration: 300ms;
+}
+
+:root {
+  --primary-color: #94DEF5;
+}
+
+.focus\:outline-none:focus{
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }

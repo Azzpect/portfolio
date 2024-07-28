@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,css}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "primary-color": "var(--primary-color)",
+      }
+    },
     fontFamily: {
       navitem: ["Julius Sans One"],
       heading: ["Vollkorn SC"],
