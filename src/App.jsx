@@ -2,9 +2,18 @@ import "./css/output.css";
 import github from "./assets/github.svg";
 import linkedin from "./assets/linkedin.svg";
 import twitter from "./assets/twitter.svg";
+import sun from "./assets/sun.svg";
 import WorkCard from "./WorkCard";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    
+  }, [darkMode])
+
   return (
     <>
       <header className="fixed top-0 bg-white z-10 w-screen h-[8vh] flex justify-around">
@@ -34,6 +43,9 @@ function App() {
         </nav>
       </header>
       <section className="handles-container">
+        <img src={sun} className="handle" onClick={() => {
+          setDarkMode(!darkMode);
+        }}/>
         <a href="https://github.com/Azzpect/" target="_blank">
           <img src={github} className="handle"></img>
         </a>
@@ -105,11 +117,11 @@ function App() {
       <section className="contact-container" id="contact">
         <h1 className="heading mb-10">Contact Me</h1>
         <div className="contact">
-          <input type="text" />
-          <input type="email" />
-          <input type="text" />
-          <textarea></textarea>
-          <button>Send Email</button>
+          <input type="text" placeholder="Enter your name:"/>
+          <input type="email" placeholder="Enter your email:"/>
+          <input type="text" placeholder="Enter the subject:"/>
+          <textarea placeholder="Enter your message:"></textarea>
+          <button className="btn">Send Email</button>
         </div>
       </section>
     </>

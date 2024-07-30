@@ -2,14 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Vollkorn+SC:wght@400;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: #94DEF5;
-}
 
 @layer components {
   html {
@@ -21,7 +19,7 @@
     @apply font-heading text-4xl font-bold;
   }
   .para {
-    @apply font-para text-xs;
+    @apply font-para1 text-xs;
   }
   .container {
     @apply flex flex-row justify-around items-center mx-auto;
@@ -35,10 +33,10 @@
   }
 
   .handles-container {
-    @apply fixed top-[9vh] right-0 w-[5vw] h-[18vh] flex flex-col justify-around items-center;
+    @apply fixed top-[9vh] right-0 w-[5vw] h-[20vh] flex flex-col justify-around items-center;
   }
   .handle {
-    @apply cursor-pointer;
+    @apply cursor-pointer transition-transform hover:scale-110;
   }
 
   .intro {
@@ -48,7 +46,7 @@
     @apply w-[80%] mx-auto flex justify-around items-center self-end;
   }
   .btn {
-    @apply rounded-2xl text-base w-[7em] h-[3em] font-semibold;
+    @apply rounded-2xl text-base w-[7em] h-[3.3em] font-medium font-para2 shadow-black-sha transition-transform hover:scale-105;
   }
 
   .projects {
@@ -56,7 +54,8 @@
   }
   
   .work {
-    @apply flex items-center justify-around w-[40%] min-h-[40%] rounded-3xl bg-primary-color p-3 cursor-pointer;
+    @apply flex items-center justify-around w-[40%] min-h-[40%] rounded-3xl bg-primary-color p-3 cursor-pointer shadow-black-sha transition-transform hover:scale-105;
+;
   }
   .contact-container {
     @apply w-[85vw] mx-auto my-[15vh] flex flex-col items-center;
@@ -65,7 +64,7 @@
     @apply w-[100%] grid grid-cols-7 grid-rows-[6vh_6vh_6vh_6vh_8vh] gap-y-10;
   }
   .contact>input,.contact>textarea {
-    @apply border-primary-color border-solid border-2 focus:outline-none rounded-xl px-2 font-para;
+    @apply border-primary-color border-solid border-2 focus:outline-none rounded-xl px-2 font-para1;
   }
   .contact>input:nth-child(1) {
     @apply col-start-1 col-end-4;
@@ -80,6 +79,6 @@
     @apply row-start-3 row-end-5 col-span-full resize-none pt-1;
   }
   .contact>button {
-    @apply col-start-4 col-end-5 bg-primary-color rounded-2xl font-heading;
+    @apply col-start-4 col-end-5 bg-primary-color rounded-2xl font-heading font-para2 font-medium;
   }
 }
