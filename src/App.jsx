@@ -1,23 +1,53 @@
 import "./css/output.css";
-import github from "./assets/github.svg";
-import linkedin from "./assets/linkedin.svg";
-import twitter from "./assets/twitter.svg";
-import sun from "./assets/sun.svg";
+import dgithub from "./assets/dgithub.svg";
+import lgithub from "./assets/lgithub.svg";
+import dlinkedin from "./assets/dlinkedin.svg";
+import llinkedin from "./assets/llinkedin.svg";
+import dtwitter from "./assets/dtwitter.svg";
+import ltwitter from "./assets/ltwitter.svg";
+import dsun from "./assets/dsun.svg";
+import lsun from "./assets/lsun.svg";
 import WorkCard from "./WorkCard";
 import { useEffect, useState } from "react";
 
 function App() {
-
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    
-  }, [darkMode])
+    document.querySelector("#light-handles").style.display = "none";
+  }, [])
+
+  useEffect(() => {
+    if (darkMode) {
+      document.querySelector("body").style.backgroundColor = "black";
+      document.querySelector("header").style.backgroundColor = "black";
+      document.querySelector("header>img").src = "./src/assets/logo2.png";
+      document.querySelectorAll(".navitem").forEach((item) => {
+        item.style.color = "white";
+      });
+      document.querySelector("*").style.color = "white";
+      document.querySelector(".btn-container>button:nth-child(2)").style.color = "black";
+      document.querySelector("#light-handles").style.display = "flex";
+      document.querySelector("#dark-handles").style.display = "none";
+    } else {
+      document.querySelector("*").style.color = "black";
+      document.querySelector("body").style.backgroundColor = "white";
+      document.querySelector("header").style.backgroundColor = "white";
+      document.querySelector("header>img").src = "./src/assets/logo1.png";
+      document.querySelector("#light-handles").style.display = "none";
+      document.querySelector("#dark-handles").style.display = "flex";
+      document.querySelectorAll(".navitem").forEach((item) => {
+        item.style.color = "black";
+      });
+
+
+    }
+  }, [darkMode]);
 
   return (
     <>
-      <header className="fixed top-0 bg-white z-10 w-screen h-[8vh] flex justify-around">
-        <img src="./src/assets/logo.png" className="" />
+      <header className="fixed bg-white top-0 z-10 w-screen h-[8vh] flex justify-around">
+        <img src="./src/assets/logo1.png" className="" />
         <nav className="w-[40vw] mr-[15%] flex justify-around items-center">
           <a
             className="navitem"
@@ -35,33 +65,63 @@ function App() {
           >
             Work
           </a>
-          <a className="navitem" onClick={() => {
-            window.scrollTo(0, 2000)
-          }}>
+          <a
+            className="navitem"
+            onClick={() => {
+              window.scrollTo(0, 2000);
+            }}
+          >
             Contact
           </a>
         </nav>
       </header>
-      <section className="handles-container">
-        <img src={sun} className="handle" onClick={() => {
-          setDarkMode(!darkMode);
-        }}/>
+      <section id="dark-handles" className="handles-container">
+        <img
+          src={dsun}
+          name="sun"
+          className="handle mb-[5vh]"
+          onClick={() => {
+            setDarkMode(!darkMode);
+          }}
+        />
         <a href="https://github.com/Azzpect/" target="_blank">
-          <img src={github} className="handle"></img>
+          <img src={dgithub} className="handle"></img>
         </a>
         <a
           href="https://www.linkedin.com/in/atanu-ghosh-698649294/"
           target="_blank"
         >
-          <img src={linkedin} className="handle"></img>
+          <img src={dlinkedin} className="handle"></img>
         </a>
         <a href="https://x.com/AtanughoshBrp" target="_blank">
-          <img src={twitter} className="handle"></img>
+          <img src={dtwitter} className="handle"></img>
+        </a>
+      </section>
+      <section id="light-handles" className="handles-container">
+        <img
+          src={lsun}
+          name="sun"
+          className="handle mb-[5vh]"
+          onClick={() => {
+            setDarkMode(!darkMode);
+          }}
+        />
+        <a href="https://github.com/Azzpect/" target="_blank">
+          <img src={lgithub} className="handle"></img>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/atanu-ghosh-698649294/"
+          target="_blank"
+        >
+          <img src={llinkedin} className="handle"></img>
+        </a>
+        <a href="https://x.com/AtanughoshBrp" target="_blank">
+          <img src={ltwitter} className="handle"></img>
         </a>
       </section>
       <section className="intro" id="home">
         <div className="flex flex-col justify-around items-center">
-          <img src="./src/assets/myimage.jpg" className="rounded-[50%]" />
+          <img src="./src/assets/myimage.jpg" className="rounded-[50%] border-white border-solid border-2" />
           <p className="font-sig text-2xl leading-[5rem]">
             Hello, I am Atanu Ghosh.
           </p>
@@ -111,15 +171,15 @@ function App() {
         </div>
         <img
           src="./src/assets/myimage.jpg"
-          className="w-[20%] aspect-square rounded-3xl"
+          className="w-[20%] aspect-square rounded-3xl border-white border-solid border-2"
         />
       </section>
       <section className="contact-container" id="contact">
         <h1 className="heading mb-10">Contact Me</h1>
         <div className="contact">
-          <input type="text" placeholder="Enter your name:"/>
-          <input type="email" placeholder="Enter your email:"/>
-          <input type="text" placeholder="Enter the subject:"/>
+          <input type="text" placeholder="Enter your name:" />
+          <input type="email" placeholder="Enter your email:" />
+          <input type="text" placeholder="Enter the subject:" />
           <textarea placeholder="Enter your message:"></textarea>
           <button className="btn">Send Email</button>
         </div>
