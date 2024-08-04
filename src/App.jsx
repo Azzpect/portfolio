@@ -134,7 +134,9 @@ function App() {
             passionate about problem solving and creating robust applications
           </h5>
           <div className="btn-container absolute bottom-12">
-            <button className="btn bg-primary-color">See my work</button>
+            <button className="btn bg-primary-color" onClick={() => {
+              window.scrollTo(0, 500);
+            }}>See my work</button>
             <button
               className="btn bg-[#D9D9D9]"
               onClick={() => {
